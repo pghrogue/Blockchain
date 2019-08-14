@@ -168,7 +168,7 @@ def mine():
             'proof': block['proof'],
             'previous_hash': block['previous_hash'],
         }
-    print(response)
+    
     return jsonify(response), 200
 
 

@@ -56,7 +56,7 @@ if __name__ == '__main__':
     while True:
         # TODO: Get the last proof from the server and look for a new one
         last_proof = requests.get(url = node + '/last_proof').json()
-        print(f"Last proof is: {last_proof['last_proof']}")
+        
         new_proof = proof_of_work(last_proof)
 
         # TODO: When found, POST it to the server {"proof": new_proof}
@@ -68,7 +68,7 @@ if __name__ == '__main__':
         # TODO: If the server responds with 'New Block Forged'
         # add 1 to the number of coins mined and print it.  Otherwise,
         # print the message from the server.
-        print(r)
+        
         if r.get('message') == "New Block Forged":
             coins_mined += 1
 
